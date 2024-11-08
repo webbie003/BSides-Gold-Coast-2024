@@ -1,5 +1,5 @@
 # BSides Gold Coast 2024
-CTF Write-up for Skipper, This is one way of completing the challenge but I find afterwards by Googling another way but I liked mine :)
+CTF Write-up for Skipper, This is one way of completing the challenge but I found afterwards with a quick Google another way but I liked mine :)
 
 ## Overview
 **Description:**
