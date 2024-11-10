@@ -28,6 +28,15 @@ First thought was maybe there was a help section or arguments to pass! I quickly
 ![alt text](https://github.com/webbie003/BSides-Gold-Coast-2024/blob/main/images/ltrace.png)
 
 The next bit was a steep learning curve using Radare2 to examine the file. Specifically focusing on the ‘main’ function where I found that there are actually three separate logic tests being performed that were daisy-chained. Each test jumping to a new address if true advancing through the program until the **fcn.08048a63** function is called. This function looks to perform some complex mathematic operation that went way over my head but would produce the flag when executed. 
+![img](https://github.com/webbie003/BSides-Gold-Coast-2024/blob/main/images/Original-vs-Patched.png)
+
+<p>
+  <details>
+    <summary>Program Flow</summary>
+    
+  ![img](https://github.com/webbie003/BSides-Gold-Coast-2024/blob/main/images/R2-LT-Patched.png)
+  </details>
+</p>
 
 ## Solution
 Opened the **skipper-32** file as read/write within Radare2, adjusted the jump conditions under each of the three identified logic tests from JE (jump if true, known as 0x74) to JNE (jump if not true, known as 0x75) before executing the file again giving me the flag..!
@@ -38,7 +47,7 @@ SPOILER WARNING...!
 <p>
   <details>
     <summary>Reveal Here</summary>
-
+    
   ![img](https://github.com/webbie003/BSides-Gold-Coast-2024/blob/main/images/Result.png)
   </details>
 </p>
